@@ -8,6 +8,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -33,7 +34,7 @@ class MainActivity : ComponentActivity() {
                         .background(Color(0xFFE3F2FD)), // Light blue background
                     contentAlignment = Alignment.Center
                 ) {
-                    QuoteDisplay()
+                    FactDisplay()
                 }
             }
         }
@@ -41,63 +42,63 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun QuoteDisplay() {
-    // List of motivational quotes
+fun FactDisplay() {
+    // List of FunFact
     val quotes = listOf(
-        "It takes courage to grow up and become who you really are. — E.E. Cummings",
-        "Your self-worth is determined by you. You don't have to depend on someone telling you who you are. — Beyoncé",
-        "Nothing is impossible. The word itself says 'I'm possible!' — Audrey Hepburn",
-        "Keep your face always toward the sunshine, and shadows will fall behind you. — Walt Whitman",
-        "You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose. You're on your own. And you know what you know. And you are the guy who'll decide where to go. — Dr. Seuss",
-        "Attitude is a little thing that makes a big difference. — Winston Churchill",
-        "To bring about change, you must not be afraid to take the first step. We will fail when we fail to try. — Rosa Parks",
-        "All our dreams can come true, if we have the courage to pursue them. — Walt Disney",
-        "Don't sit down and wait for the opportunities to come. Get up and make them. — Madam C.J. Walker",
-        "Champions keep playing until they get it right. — Billie Jean King",
-        "I am lucky that whatever fear I have inside me, my desire to win is always stronger. — Serena Williams",
-        "You are never too old to set another goal or to dream a new dream. — C.S. Lewis",
-        "It is during our darkest moments that we must focus to see the light. — Aristotle",
-        "Believe you can and you're halfway there. — Theodore Roosevelt",
-        "Life shrinks or expands in proportion to one’s courage. — Anaïs Nin",
-        "Just don't give up trying to do what you really want to do. Where there is love and inspiration, I don't think you can go wrong. — Ella Fitzgerald",
-        "Try to be a rainbow in someone's cloud. — Maya Angelou",
-        "If you don't like the road you're walking, start paving another one. — Dolly Parton",
-        "Real change, enduring change, happens one step at a time. — Ruth Bader Ginsburg",
-        "All dreams are within reach. All you have to do is keep moving towards them. — Viola Davis",
-        "It is never too late to be what you might have been. — George Eliot",
-        "When you put love out in the world it travels, and it can touch people and reach people in ways that we never even expected. — Laverne Cox",
-        "Give light and people will find the way. — Ella Baker",
-        "It always seems impossible until it's done. — Nelson Mandela",
-        "Don’t count the days, make the days count. — Muhammad Ali",
-        "If you risk nothing, then you risk everything. — Geena Davis",
-        "Definitions belong to the definers, not the defined. — Toni Morrison",
-        "When you have a dream, you've got to grab it and never let go. — Carol Burnett",
-        "Never allow a person to tell you no who doesn’t have the power to say yes. — Eleanor Roosevelt",
-        "When it comes to luck, you make your own. — Bruce Springsteen",
-        "If you're having fun, that's when the best memories are built. — Simone Biles",
-        "Failure is the condiment that gives success its flavor. — Truman Capote",
-        "Hard things will happen to us. We will recover. We will learn from it. We will grow more resilient because of it. — Taylor Swift",
-        "Your story is what you have, what you will always have. It is something to own. — Michelle Obama",
-        "To live is the rarest thing in the world. Most people just exist. — Oscar Wilde",
-        "You define beauty yourself, society doesn’t define your beauty. — Lady Gaga",
-        "Optimism is a happiness magnet. If you stay positive, good things and good people will be drawn to you. — Mary Lou Retton",
-        "You just gotta keep going and fighting for everything, and one day you’ll get to where you want. — Naomi Osaka",
-        "If you prioritize yourself, you are going to save yourself. — Gabrielle Union",
-        "No matter how far away from yourself you may have strayed, there is always a path back. You already know who you are and how to fulfill your destiny. — Oprah Winfrey",
-        "A problem is a chance for you to do your best. — Duke Ellington",
-        "You can’t turn back the clock. But you can wind it up again. — Bonnie Prudden",
-        "When you can’t find someone to follow, you have to find a way to lead by example. — Roxane Gay",
-        "There is no better compass than compassion. — Amanda Gorman",
-        "Stand before the people you fear and speak your mind – even if your voice shakes. — Maggie Kuhn",
-        "It’s a toxic desire to try to be perfect. I realized later in life that the challenge is not to be perfect. It’s to be whole. — Jane Fonda",
-        "Vitality shows not only in the ability to persist but in the ability to start over. — F. Scott Fitzgerald",
-        "The most common way people give up their power is by thinking they don’t have any. — Alice Walker",
-        "Love yourself first and everything else falls into line. — Lucille Ball",
-        "In three words I can sum up everything I've learned about life: It goes on. — Robert Frost"
+        "Honey never spoils; archaeologists have found edible honey in ancient Egyptian tombs.",
+        "A single strand of human hair can support up to 100 grams in weight.",
+        "Octopuses have three hearts and blue blood.",
+        "Bananas are berries, but strawberries aren't.",
+        "The Eiffel Tower can be 15 cm taller during the summer due to thermal expansion.",
+        "Wombat poop is cube-shaped.",
+        "Humans share 50% of their DNA with bananas.",
+        "There are more stars in the universe than grains of sand on Earth.",
+        "A day on Venus is longer than its year.",
+        "Sloths can hold their breath for up to 40 minutes underwater.",
+        "The inventor of the Frisbee was turned into a Frisbee after he died.",
+        "Sea otters hold hands while sleeping to avoid drifting apart.",
+        "There are more possible iterations of a game of chess than atoms in the known universe.",
+        "A group of flamingos is called a 'flamboyance.'",
+        "Cows have best friends and become stressed when separated.",
+        "The heart of a blue whale is as large as a small car.",
+        "Hot water freezes faster than cold water, a phenomenon known as the Mpemba effect.",
+        "Some turtles can breathe through their butts.",
+        "The shortest war in history lasted 38 minutes between Britain and Zanzibar in 1896.",
+        "Rainbows can only be seen in the morning or late afternoon.",
+        "Pigeons can recognize themselves in a mirror.",
+        "A teaspoon of honey represents the life work of 12 bees.",
+        "Butterflies taste with their feet.",
+        "A cloud can weigh over a million pounds.",
+        "The first computer virus was created in 1983.",
+        "Pineapples take two years to grow.",
+        "There are more trees on Earth than stars in the Milky Way galaxy.",
+        "A day on Mercury lasts longer than its year.",
+        "Peanuts are not nuts; they are legumes.",
+        "Humans and giraffes have the same number of neck bones.",
+        "The world's oldest piece of chewing gum is over 9,000 years old.",
+        "Koalas have fingerprints almost identical to humans.",
+        "The inventor of the microwave appliance only received $2 for his discovery.",
+        "A bolt of lightning contains enough energy to toast 100,000 slices of bread.",
+        "Some cats are allergic to humans.",
+        "Bamboo can grow up to 35 inches in a single day.",
+        "There are more bacteria in your mouth than there are people on Earth.",
+        "The unicorn is the national animal of Scotland.",
+        "Your taste buds have a lifespan of about 10 days.",
+        "The longest English word without a vowel is 'rhythms.'",
+        "A sneeze travels about 100 miles per hour.",
+        "Polar bears are nearly invisible under infrared photography.",
+        "The inventor of the Pringles can is buried in one.",
+        "A single cloud can produce up to 1.5 million lightning bolts.",
+        "Snails can sleep for three years.",
+        "The first alarm clock could only ring at one time: 4 a.m.",
+        "The total weight of all ants on Earth is greater than the weight of all humans.",
+        "Humans can distinguish over a trillion different smells.",
+        "The fingerprints of a koala are so similar to humans that they can be mistaken at a crime scene.",
+        "There is a species of jellyfish that is biologically immortal."
     )
 
     // Remember the current quote index
-    var currentQuote by remember { mutableStateOf(getRandomIndex(quotes.size)) }
+    var currentFact by remember { mutableStateOf(getRandomIndex(quotes.size)) }
 
     // Column to arrange Text and Button vertically
     Column(
@@ -105,35 +106,40 @@ fun QuoteDisplay() {
         verticalArrangement = Arrangement.Center,
         modifier = Modifier.padding(16.dp)
     ) {
-        // Display the quote
+        // Display the FunFact
         Text(
-            text = quotes[currentQuote],
+            text = quotes[currentFact],
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
-            color = Color(0xFF0D47A1), // Dark blue color
+            color = Color.Blue,
             textAlign = TextAlign.Center,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 24.dp)
         )
 
-        // Button to change the quote
+        // Button to change the FunFact
         Button(
+
             onClick = {
                 var newIndex = getRandomIndex(quotes.size)
-                // Ensure a different quote is selected
-                while (newIndex == currentQuote && quotes.size > 1) {
+                // Ensure a different FunFact is selected
+                while (newIndex == currentFact && quotes.size > 1) {
                     newIndex = getRandomIndex(quotes.size)
                 }
-                currentQuote = newIndex
+                currentFact = newIndex
             },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.Blue,
+                contentColor = Color.White
+            ),
             modifier = Modifier
                 .height(50.dp)
                 .width(200.dp)
         ) {
             Text(
-                text = "New Quote",
-                fontSize = 16.sp,
+                text = "New FunFact",
+                fontSize = 20.sp,
                 color = Color.White
             )
         }
